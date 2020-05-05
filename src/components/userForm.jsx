@@ -11,7 +11,7 @@ class UserForm extends React.Component {
 
   render() {
     const { country } = this.state;
-    console.log(this.props);
+
     return (
       <div className="row">
         <div className="col-sm-8 offset-sm-2  col-md-6 offset-md-3 mt-2">

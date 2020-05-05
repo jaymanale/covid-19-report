@@ -6,11 +6,12 @@ import Loader from './components/loader';
 class App extends React.Component {
   state = {
     loading: false,
+    error: false,
     allCountryInfo: [],
   };
 
   handleCountry = (country) => {
-    this.setState({ loading: true, allCountryInfo: [] });
+    this.setState({ loading: true, allCountryInfo: [], error: false });
 
     fetch(`https://covid-193.p.rapidapi.com/statistics?country=${country}`, {
       method: 'GET',
@@ -21,20 +22,30 @@ class App extends React.Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        this.setState({ allCountryInfo: data.response, loading: false });
+        if (data.response.length === 0) {
+          this.setState({
+            allCountryInfo: data.response,
+            loading: false,
+            error: true,
+          });
+        } else {
+          this.setState({
+            allCountryInfo: data.response,
+            loading: false,
+            error: false,
+          });
+        }
       })
       .catch((e) => console.log('error in fetch data', e));
   };
 
   render() {
-    const { loading, allCountryInfo } = this.state;
+    const { loading, error, allCountryInfo } = this.state;
 
     return (
       <div className="container">
         <h4 className="text-center m-2">Covid-19 Report</h4>
         <UserForm onHandleSubmit={this.handleCountry} />
-        {console.log(allCountryInfo)}
 
         {allCountryInfo.length !== 0 && (
           <div className="container">
@@ -66,6 +77,11 @@ class App extends React.Component {
           </div>
         )}
         {loading === true && <Loader />}
+        {error === true && (
+          <p className="text-center m-2 text-danger">
+            Plese provide valid country name.
+          </p>
+        )}
       </div>
     );
   }
