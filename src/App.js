@@ -1,6 +1,7 @@
 import React from 'react';
 import UserForm from './components/userForm';
 import InfoCard from './components/infoCard';
+import { getCovidData } from './services/covidData';
 import Loader from './components/loader';
 
 class App extends React.Component {
@@ -10,33 +11,24 @@ class App extends React.Component {
     allCountryInfo: [],
   };
 
-  handleCountry = (country) => {
+  handleCountry = async (country) => {
     this.setState({ loading: true, allCountryInfo: [], error: false });
 
-    fetch(`https://covid-193.p.rapidapi.com/statistics?country=${country}`, {
-      method: 'GET',
-      headers: {
-        'x-rapidapi-host': 'covid-193.p.rapidapi.com',
-        'x-rapidapi-key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.response.length === 0) {
-          this.setState({
-            allCountryInfo: data.response,
-            loading: false,
-            error: true,
-          });
-        } else {
-          this.setState({
-            allCountryInfo: data.response,
-            loading: false,
-            error: false,
-          });
-        }
-      })
-      .catch((e) => console.log('error in fetch data', e));
+    const data = await (await getCovidData(country)).json();
+    console.log(data);
+    if (data.response.length === 0) {
+      this.setState({
+        allCountryInfo: data.response,
+        loading: false,
+        error: true,
+      });
+    } else {
+      this.setState({
+        allCountryInfo: data.response,
+        loading: false,
+        error: false,
+      });
+    }
   };
 
   render() {
