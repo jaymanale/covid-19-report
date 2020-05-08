@@ -31,7 +31,7 @@ npm test
 
 ## Author
 
-👤 **Jayram Manale**
+:man: **Jayram Manale**
 
 - Website: www.jayrammanale.com
 - Twitter: [@JayManale](https://twitter.com/JayManale)
