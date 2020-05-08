@@ -4,6 +4,7 @@
   <a href="https://twitter.com/JayManale" target="_blank">
     <img alt="Twitter: JayManale" src="https://img.shields.io/twitter/follow/JayManale.svg?style=social" />
   </a>
+  <img alt="Twitter: JayManale" src="https://img.shields.io/github/last-commit/jaymanale/covid-19-report" />
 </p>
 
 > get covid-19 report based oncountry names
@@ -13,7 +14,7 @@
 ## Install
 
 ```sh
-yarn install
+npm install
 ```
 
 ## Usage
@@ -25,20 +26,18 @@ npm start
 ## Run tests
 
 ```sh
-yarn run test
+npm test
 ```
 
 ## Author
 
 👤 **Jayram Manale**
 
-* Website: www.jayrammanale.com
-* Twitter: [@JayManale](https://twitter.com/JayManale)
-* Github: [@jaymanale](https://github.com/jaymanale)
+- Website: www.jayrammanale.com
+- Twitter: [@JayManale](https://twitter.com/JayManale)
+- Github: [@jaymanale](https://github.com/jaymanale)
+- LinkedIn: [@jayram-manale](https://linkedin.com/in/jayram-manale)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
