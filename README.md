@@ -4,7 +4,7 @@
   <a href="https://twitter.com/JayManale" target="_blank">
     <img alt="Twitter: JayManale" src="https://img.shields.io/twitter/follow/JayManale.svg?style=social" />
   </a>
-  <img alt="Twitter: JayManale" src="https://img.shields.io/github/last-commit/jaymanale/covid-19-report" />
+  <img alt="Github: JayManale" src="https://img.shields.io/github/last-commit/jaymanale/covid-19-report" />
 </p>
 
 > get covid-19 report based oncountry names
