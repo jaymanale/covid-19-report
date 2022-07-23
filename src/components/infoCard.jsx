@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const InfoCard = (props) => {
-  let style = 'card text-white text-center bg-';
+  let style = "card text-white text-center ";
   style += props.cardStyle;
 
   return (
@@ -9,7 +9,7 @@ const InfoCard = (props) => {
       <div className={style}>
         <div className="card-body">
           <p className="card-text">{props.title}</p>
-          <p className="font-weight-bold">{props.value}</p>
+          <p className="fw-bold">{props.value.toLocaleString("hi-IN")}</p>
         </div>
       </div>
     </div>
