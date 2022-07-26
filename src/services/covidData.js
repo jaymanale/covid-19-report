@@ -5,7 +5,7 @@ export const getCovidData = (country) => {
       method: "GET",
       headers: {
         "x-rapidapi-host": "covid-193.p.rapidapi.com",
-        "x-rapidapi-key": process.env.REACT_COVID_APP_TOKEN,
+        "x-rapidapi-key": "2548137a99msh3307ab54622080cp1504d8jsn53b20928f346",
       },
     }
   );
