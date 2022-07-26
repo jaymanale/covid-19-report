@@ -18,7 +18,7 @@ class App extends React.Component {
 
     const data = await (await getCovidData(country)).json();
 
-    if (data && data.response.length === 0) {
+    if (data && data.response && data.response.length === 0) {
       this.setState({
         allCountryInfo: data.response,
         loading: false,
